@@ -82,7 +82,6 @@
       "viewArchived": "Pokaż Archiwalne",
       "viewActive": "Pokaż Aktywne",
       "editTask": "Edytuj Zadanie",
-      "showArchived": "Pokaż Archiwalne",
       "showActive": "Pokaż Aktywne",
       "showArchived": "Pokaż Zarchiwizowane"
     },
@@ -95,10 +94,14 @@
       "taskUpdated": "Zadanie zostało pomyślnie zaktualizowane!",
       "taskDeleted": "Zadanie zostało pomyślnie usunięte!",
       "taskArchived": "Zadanie zostało pomyślnie zarchiwizowane!",
+      "taskArchivedFailed": "Nie udało się zarchiwizować zadania.",
       "taskAddError": "Nie udało się dodać zadania.",
       "taskUpdateError": "Nie udało się zaktualizować zadania.",
       "taskDeleteError": "Nie udało się usunąć zadania.",
       "taskArchiveError": "Nie udało się zarchiwizować zadania.",
+      "taskSuccess": "Zadanie zakończone sukcesem!",
+      "taskFail": "Nie udało się oznaczyć zadania jako wykonane.",
+      "failedLoad": "Nie udało się załadować zadań.",
       "fillFields": "Proszę wypełnić wszystkie pola przed dodaniem zadania."
     },
     "priority": {
