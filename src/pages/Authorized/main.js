@@ -30,7 +30,7 @@ function Main() {
       setTasks(formattedTasks);
     } catch (error) {
       console.error('Error fetching tasks:', error);
-      setResponseMessage('Failed to load tasks.');
+      setResponseMessage(t('main.messages.failedLoad'));
     }
   };
 
@@ -55,55 +55,55 @@ function Main() {
 
         if (isEditMode) {
           await api.put(`/api/v1/EditTask/${editTaskId}`, newTask);
-          setResponseMessage('Task updated successfully!');
+          setResponseMessage(t('main.messages.taskUpdated'));
           setIsEditMode(false);
           setEditTaskId(null);
         } else {
           await api.post('/api/v1/AddTask', newTask);
-          setResponseMessage('Task added successfully!');
+          setResponseMessage(t('main.messages.taskAdded'));
         }
 
         resetForm();
         fetchTasks();
       } catch (error) {
         console.error('Error saving task:', error);
-        setResponseMessage('Failed to save task.');
+        setResponseMessage(t('main.messages.taskAddError'));
       }
     } else {
-      setResponseMessage('Please fill in all fields before saving a task.');
+      setResponseMessage(t('main.messages.fillFields'));
     }
   };
 
   const handleDeleteTask = async (taskId) => {
     try {
       await api.delete(`/api/v1/DeleteTask/${taskId}`);
-      setResponseMessage('Task deleted successfully!');
+      setResponseMessage(t('main.messages.taskDeleted'));
       fetchTasks();
     } catch (error) {
       console.error('Error deleting task:', error);
-      setResponseMessage('Failed to delete task.');
+      setResponseMessage(t('main.messages.taskDeleteError'));
     }
   };
 
   const handleMarkAsDone = async (taskId) => {
     try {
       await api.post(`/api/v1/MarkTaskAsDone/${taskId}`);
-      setResponseMessage('Task marked as done successfully!');
+      setResponseMessage(t('main.messages.taskSuccess'));
       fetchTasks();
     } catch (error) {
       console.error('Error marking task as done:', error);
-      setResponseMessage('Failed to mark task as done.');
+      setResponseMessage(t('main.messages.taskFail'));
     }
   };
 
   const handleArchiveTask = async (taskId) => {
     try {
       await api.post(`/api/v1/ArchiveTask/${taskId}`);
-      setResponseMessage('Task archived successfully!');
+      setResponseMessage(t('main.messages.taskArchived'));
       fetchTasks();
     } catch (error) {
       console.error('Error archiving task:', error);
-      setResponseMessage('Failed to archive task.');
+      setResponseMessage(t('main.messages.taskArchivedFailed'));
     }
   };
 
